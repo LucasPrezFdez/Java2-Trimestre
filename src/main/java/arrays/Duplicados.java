@@ -11,7 +11,14 @@ public class Duplicados {
         System.out.println(Arrays.toString(array));
 
         for (int i=0; i< array.length;i++){
-            System.out.println("indice "+i+" tiene un valor "+array[i]);
+//            System.out.println("indice "+i+" tiene un valor "+array[i]);
+            for (int j=i+1; j<array.length; j++){
+//                System.out.println("\t indice j "+j+" tiene un valor "+array[j]);
+                if (array[i]==array[j]){
+                    System.out.println("Elemento duplicado encontrado: " + array[i]);
+                }
+
+            }
         }
     }
 }
