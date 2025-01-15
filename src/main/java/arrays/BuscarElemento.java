@@ -13,14 +13,14 @@ public class BuscarElemento {
 
         for (int i = 0; i < args.length; i++) {
 
-            array[i] = (int) (1 + Math.random() * 999);
+            array[i] = (int) (1 + Math.random() * 99);
         }
 
 //        for (int i = 0; i < array.length; i++) {
 //            System.out.println(array[i]);
 //        }
 
-        System.out.println("dame un entero entre 1 y 999: --- ");
+        System.out.println("dame un entero entre 1 y 99: --- ");
         int busca = sc.nextInt();
 
         boolean cortar = false;
