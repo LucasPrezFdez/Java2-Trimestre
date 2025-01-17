@@ -16,6 +16,6 @@ public class AlgoritmoBurbuja {
                 }
             }
         }
-        System.out.println(Arrays.toString(array));
+        System.out.println(array);
     }
 }
