@@ -64,7 +64,7 @@ public class Coche {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Coche coche = (Coche) o;
-        return numeroRuedas == coche.numeroRuedas && cilindrada == coche.cilindrada && Objects.equals(marca, coche.marca) && Objects.equals(modelo, coche.modelo);
+        return  Objects.equals(marca, coche.marca) && Objects.equals(modelo, coche.modelo);
     }
 
     @Override
@@ -83,6 +83,10 @@ public class Coche {
         System.out.println(zito.equals(nillo));
 
         Coche lere = new Coche(4, "Seat","Arosa",50);
+
+        System.out.println(lere.equals(nillo));
+
+
 
     }
 }
