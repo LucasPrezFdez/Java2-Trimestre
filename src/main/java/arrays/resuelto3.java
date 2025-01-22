@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-public class resuelto2 {
+public class resuelto3 {
 
     public static void ordenaBurbuja(int[] ref) {
 
@@ -34,8 +34,30 @@ public class resuelto2 {
         }
     }
 
+    public static void ordenaCocktail(int[] array) {
+        int i = 0, j = array.length - 1;
+        while (i < j) {
+            for (int k = i; k < j; k++) { // dirección →
+                if (array[k] > array[k + 1]) {
+                    int temp = array[k];
+                    array[k] = array[k + 1];
+                    array[k + 1] = temp;
+                }
+            }
+            j--;
+            for (int k = j; k > i; k--) { // dirección ←
+                if (array[k] < array[k - 1]) {
+                    int temp = array[k];
+                    array[k] = array[k - 1];
+                    array[k - 1] = temp;
+                }
+            }
+            i++;
+        }
+    }
+
     final static int POS = 50;
-    final static int LIMITE = 20;
+    final static int LIMITE = 100;
 
     public static void main(String[] args) {
 
@@ -48,28 +70,9 @@ public class resuelto2 {
         }
         System.out.println(Arrays.toString(array));
 
-        ordenaBurbuja(array);
+        ordenaCocktail(array);
 
         System.out.println(Arrays.toString(array));
-
-        Arrays.sort(array);
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("por favor introduce un numero entre 0 y 9");
-        int numero = scanner.nextInt();
-
-        int k=0;
-        boolean sigue=true;
-        while (sigue && k<POS){
-            if (array[k] == numero){
-                System.out.println("encontrado");
-                sigue=false;
-            }
-            k++;
-        }
-
-        int index = Arrays.binarySearch(array,numero);
-        System.out.println(index);
 
     }
 }
