@@ -4,12 +4,14 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-public class resuelto9real {
+public class resuelto10 {
 
     /*
     10 gerena un array como el resuelto 9
     e inserta en la POSICION APROPIADA
      */
+
+
     final static int POS = 50;
     final static int LIMITE = 100;
 
@@ -42,22 +44,22 @@ public class resuelto9real {
             }
             indice++;
         }
-        System.out.println("posicion: " + (indice - 1));
+                    System.out.println("posicion: " + (indice - 2));
 
-        int[] nuevo = new int[POS + 1];
+                    int[] nuevo = new int[POS + 1];
 
-        for (int i = 0; i <= indice - 2; i++) {
-            nuevo[i] = array[i];
-        }
-        //insertamos en indice -1
-        nuevo[indice - 1] = numero;
+                    for (int i = 0; i <= indice - 2; i++) {
+                        nuevo[i] = array[i];
+                    }
+                    //insertamos en indice -1
+                    nuevo[indice - 1] = numero;
 
-        //despues
-        for (int i = indice; i < POS; i++) {
-            nuevo[i] = array[i];
-        }
-        //la ultima posicion a pelo
-        nuevo[POS]=array[POS-1];
+                    //despues
+                    for (int i = indice; i < POS; i++) {
+                        nuevo[i] = array[i-1];
+                    }
+                    //la ultima posicion a pelo
+                    nuevo[POS]=array[POS-1];
 
         System.out.println(Arrays.toString(nuevo));
     }
