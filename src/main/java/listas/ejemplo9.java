@@ -1,6 +1,7 @@
 package listas;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class ejemplo9 {
 
@@ -19,6 +20,7 @@ public class ejemplo9 {
         }
 
         jauria.sort(null);
+        //Collections.sort(jauria);
         System.out.println(jauria);
 
 

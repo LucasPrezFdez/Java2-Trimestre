@@ -1,8 +1,8 @@
 package listas;
 
 import java.util.Objects;
-
-public class Gato implements Comparable<Gato>{
+//implements Comparable<Gato>
+public class Gato {
     private String nombre;
     private String color;
     private String raza;
@@ -58,8 +58,8 @@ public class Gato implements Comparable<Gato>{
         return Objects.hash(nombre, color, raza);
     }
 
-    @Override
-    public int compareTo(Gato o) {
-        return this.nombre.compareTo(o.nombre);
-    }
+//    @Override
+//    public int compareTo(Gato o) {
+//        return this.nombre.compareTo(o.nombre);
+//    }
 }
