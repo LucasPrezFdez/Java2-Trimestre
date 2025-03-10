@@ -8,7 +8,7 @@ public class Diego {
     private String genero;
     private int duracion; //duracion total en minutos
 
-    public Diego(String autor, String codigo, String titulo, String genero, int duracion) {
+    public Diego(String codigo, String autor, String titulo, String genero, int duracion) {
         this.autor = autor;
         this.codigo = codigo;
         this.duracion = duracion;
@@ -59,12 +59,12 @@ public class Diego {
     @Override
     public String toString() {
         String cadena = "-------------------------------";
-        cadena+= "\nCodigo: " +this.codigo;
-        cadena+= "\nAutor: " +this.autor;
-        cadena+= "\nTitulo: " +this.titulo;
-        cadena+= "\nGenero: " +this.genero;
-        cadena+= "\nDuracion: " +this.duracion;
-        cadena+= "\n-------------------------------";
+        cadena += "\nCodigo: " + this.codigo;
+        cadena += "\nAutor: " + this.autor;
+        cadena += "\nTitulo: " + this.titulo;
+        cadena += "\nGenero: " + this.genero;
+        cadena += "\nDuracion: " + this.duracion;
+        cadena += "\n-------------------------------";
         return cadena;
     }
 }
