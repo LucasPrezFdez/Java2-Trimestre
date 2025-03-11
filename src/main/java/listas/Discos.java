@@ -1,6 +1,6 @@
 package listas;
 
-public class Diego {
+public class Discos {
 
     private String codigo = "LIBRE";
     private String autor;
@@ -8,7 +8,7 @@ public class Diego {
     private String genero;
     private int duracion; //duracion total en minutos
 
-    public Diego(String codigo, String autor, String titulo, String genero, int duracion) {
+    public Discos(String codigo, String autor, String titulo, String genero, int duracion) {
         this.autor = autor;
         this.codigo = codigo;
         this.duracion = duracion;
