@@ -1,51 +1,51 @@
 package practicaExamen;
 
 import java.util.Arrays;
-import java.util.Scanner;
+import java.util.Random;
 
 public class ejercicio1A {
 
-    //Leer por teclado una tabla de 10 elementos numéricos enteros y
-    //una posición (entre 0 y 9). Eliminar el elemento situado en una
-    //posición pedida al usuario sin dejar huecos.
+    public static double[] generaArray(int pos) {
+        double[] array = new double[pos];
 
-
-
-    public static int[] eliminaNumeroPorPosicion(int[] array,int num){
-        int aux = 0;
-        array[num] = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (0==array[i]){
-                array[i]=array[i+1];
-                aux = i+1;
-               break;
-            }
-        }
-        for (aux = aux ; aux < array.length; aux++){
-            array[aux] = array[aux+1];
-        }
-        array[array.length-1] = 0;
-        int manolo[] = Arrays.copyOf(array,array.length-1);
-        return manolo;
+        return array;
     }
 
+    public static void rellenaArray(double[] array) {
+        Random random = new Random();
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextDouble(-200, 200);
+        }
+    }
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in);
+        double[] manolo = generaArray(60);
+        rellenaArray(manolo);
 
-        int[] array = new int[10];
 
-        for (int i = 0; i < array.length; i++) {
-            System.out.println("dame numero para la posicion "+i+": ");
-            array[i] = sc.nextInt();
-        }
+        double[] positivos = Arrays.stream(manolo)
+                .filter(v -> v >= 0)
+                .toArray();
 
-        System.out.println("Que posicion quieres eliminar (del 0 al 9): ");
-        int num = sc.nextInt();
-        eliminaNumeroPorPosicion(array,num);
+        double[] negativos = Arrays.stream(manolo)
+                .filter(v -> v < 0)
+                .toArray();
 
-        System.out.println(Arrays.toString(array));
+        Arrays.sort(positivos);
+        Arrays.sort(negativos);
+
+
+        double[] pares = Arrays.stream(negativos)
+                .filter(value -> (int) value % 2 == 0)
+                .toArray();
+
+        double[] inpares = Arrays.stream(negativos)
+                .filter(value ->(int) value % 2 != 0)
+                .toArray();
+
+        System.out.println(Arrays.toString(pares));
+        System.out.println(Arrays.toString(inpares));
 
     }
 

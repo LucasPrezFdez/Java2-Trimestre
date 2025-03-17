@@ -1,4 +1,6 @@
-package listas.listas;
+package practicaExamen;
+
+import listas.Disco;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -114,23 +116,27 @@ public class coleccionDiscos implements Serializable {
         System.out.println("Disco modificado con exito");
     }
 
-    private static void guardarColeccion(){
-        try
-            (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("misDiscos.bin"))){
-                oos.writeObject(discos);
+    private static void guardarColeccion() {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("misDiscos.bin"))) {
+            oos.writeObject(discos);
             System.out.println("Mi coleccion de Discos guardada en archivo bin");
-            }
-         catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
 
     }
 
-    static void cargarColeccion(){
-
-    };
+    private static void cargarColeccion() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("misDiscos.bin"))) {
+            discos = (ArrayList<Disco>) ois.readObject();
+            System.out.println("Colección de Discos recuperada del archivo");
+            for (Disco elemento : discos){
+                System.out.println(elemento);
+            }
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static void main(String[] args) throws NullPointerException {
 
